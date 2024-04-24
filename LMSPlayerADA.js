@@ -1,6 +1,5 @@
 videojs.registerPlugin('LMSPlayerADA', function() {
   var myPlayer = this //Our video player
-
   //Handle URL Parsing
   // let playlistload;
   // let videoload;
@@ -39,7 +38,7 @@ videojs.registerPlugin('LMSPlayerADA', function() {
   let nextVideo;
   let transcriptURL;
 
-  console.log("LMSPlayerADA plugin updated @4/24/2024 12:31 pm")
+  console.log("LMSPlayerADA plugin updated @4/24/2024 12:50 pm")
 
   setTimeout( function(){ //Delayed code
     console.log(myPlayer.mediainfo)
@@ -66,13 +65,11 @@ videojs.registerPlugin('LMSPlayerADA', function() {
             myPlayer.play()
             originalID = myPlayer.mediainfo.id // For our custom button
             describedVideoID = myPlayer.mediainfo.custom_fields.described_video_id
+            transcriptURL = myPlayer.mediainfo.transcripts[0] // Update transcript URL to new video
             // console.log("swapping original id to", originalID, "described video id to", describedVideoID)
 
             // Reset our buttons
             watchingOriginalVideo = true;
-            viewingTranscript = false
-            const tBox = document.getElementById("transcriptBox")
-            tBox.style.display = 'none'
             setTimeout(function(){
               myPlayer.getChild('ControlBar').removeChild('FullscreenToggle')
               myPlayer.getChild('ControlBar').removeChild('PlaybackRateMenuButton')
