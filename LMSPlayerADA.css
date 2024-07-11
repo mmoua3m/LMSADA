@@ -1,0 +1,11 @@
+.vjs-overlay {
+    background-color: #333333;
+    color: white;
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 20px;
+}
+
+:not(.vjs-has-started) .vjs-control-bar {
+    display: flex;
+  }
